@@ -1,0 +1,12 @@
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\bin\Debug\NetworkChat1.exe.config
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\bin\Debug\NetworkChat1.exe
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\bin\Debug\NetworkChat1.pdb
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.csproj.AssemblyReference.cache
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.MainForm.resources
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.Properties.Resources.resources
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.csproj.GenerateResource.cache
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.csproj.CoreCompileInputs.cache
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.exe
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.pdb
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.ConnectForm.resources
+C:\Users\Костя\source\repos\NetworkChat1\NetworkChat1\obj\Debug\NetworkChat1.ServerForm.resources
