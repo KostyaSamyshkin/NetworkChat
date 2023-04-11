@@ -33,19 +33,21 @@ namespace NetworkChat1
             }
         }
 
-        private void Broadcast(IPAddress ip, string message)
+        private void Broadcast(string name, string message)
         {
-            byte[] ipBuffer = ip.GetAddressBytes();
-            byte[] msgBuffer = Encoding.UTF8.GetBytes(message);
-            byte[] lenBuffer = BitConverter.GetBytes(msgBuffer.Length);
+            byte[] namebuf = Encoding.UTF8.GetBytes(name);
+            byte[] namelenbuf = BitConverter.GetBytes(namebuf.Length);
+            byte[] msgbuf = Encoding.UTF8.GetBytes(message);
+            byte[] msglenbuf = BitConverter.GetBytes(msgbuf.Length);
 
             foreach (TcpClient client in Clients)
             {
                 if (!client.Connected) continue;
 
-                client.Client.Send(ipBuffer);
-                client.Client.Send(lenBuffer);
-                client.Client.Send(msgBuffer);
+                client.Client.Send(namelenbuf);
+                client.Client.Send(namebuf);
+                client.Client.Send(msglenbuf);
+                client.Client.Send(msgbuf);
             }    
         }
 
@@ -59,11 +61,20 @@ namespace NetworkChat1
                     if (client.Client.Receive(lenBuffer) != lenBuffer.Length) continue;
                     int len = BitConverter.ToInt32(lenBuffer, 0);
 
+                    byte[] nameBuffer = new byte[len];
+                    if (client.Client.Receive(nameBuffer) != nameBuffer.Length) continue;
+                    string name = Encoding.UTF8.GetString(nameBuffer);
+
+                    if (client.Client.Receive(lenBuffer) != lenBuffer.Length) continue;
+                    len = BitConverter.ToInt32(lenBuffer, 0);
+
                     byte[] msgBuffer = new byte[len];
                     if (client.Client.Receive(msgBuffer) != msgBuffer.Length) continue;
                     string msg = Encoding.UTF8.GetString(msgBuffer);
 
-                    Broadcast( ( (IPEndPoint) client.Client.RemoteEndPoint).Address, msg);
+                    if (string.IsNullOrEmpty(msg) || string.IsNullOrWhiteSpace(msg) ) continue;
+
+                    Broadcast(name, msg);
                 }
             }
             catch { }

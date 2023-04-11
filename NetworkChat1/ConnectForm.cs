@@ -13,7 +13,7 @@ namespace NetworkChat1
 
         private void rbnServer_CheckedChanged(object sender, EventArgs e)
         {
-            txtIP.Visible = !rbnServer.Checked;
+            txtIP.Visible = txtUsername.Visible = !rbnServer.Checked;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -30,7 +30,13 @@ namespace NetworkChat1
                     return;
                 }
 
-                new MainForm(txtIP.Text).Show();
+                if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrWhiteSpace(txtUsername.Text) )
+                {
+                    MessageBox.Show(this, "Введите имя пользователя!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                new MainForm(txtIP.Text, txtUsername.Text).Show();
             }
 
             this.Hide();

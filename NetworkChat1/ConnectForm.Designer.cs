@@ -33,6 +33,7 @@ namespace NetworkChat1
             this.rbnClient = new System.Windows.Forms.RadioButton();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // rbnServer
@@ -68,19 +69,28 @@ namespace NetworkChat1
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(12, 84);
+            this.btnStart.Location = new System.Drawing.Point(12, 110);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(166, 23);
-            this.btnStart.TabIndex = 3;
+            this.btnStart.TabIndex = 4;
             this.btnStart.Text = "Запустить";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(12, 84);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(166, 20);
+            this.txtUsername.TabIndex = 3;
+            this.txtUsername.Text = "Имя пользователя";
             // 
             // ConnectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(190, 117);
+            this.ClientSize = new System.Drawing.Size(190, 141);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtIP);
             this.Controls.Add(this.rbnClient);
@@ -101,5 +111,6 @@ namespace NetworkChat1
         private System.Windows.Forms.RadioButton rbnClient;
         private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }
